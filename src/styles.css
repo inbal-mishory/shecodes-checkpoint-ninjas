@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+a.navbar-brand {
+    width: 9em;
+    white-space: normal;
+    padding: 0;
+    line-height: 13px;
+}
+
+a.navbar-brand span {
+    font-size: 1.76em;
+    line-height: 1em;
+    margin: 0;
+}
+
+.alert p{
+    margin:0;
+    padding: 0;
+}
