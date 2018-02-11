@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "shecodes-checkpoint-ninjas",
+    "shecodes": "shecodes-checkpoint-ninjas"
+  }
+}
