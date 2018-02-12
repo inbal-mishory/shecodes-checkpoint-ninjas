@@ -1,27 +1,30 @@
 <div class="row">
+    <div class="col-md-12">
+      <h2 class="text-success"><i class="fa fa-users"></i> Members</h2>
+    </div>
+</div>
+<div class="row">
   <div class="col-md-6">
-    <h2><i class="fa fa-users"></i> Members</h2>
+      <div class="form-group">
+          <input [(ngModel)]="searchText" placeholder="search staff members" class="form-control w-100 user-search">
+      </div>
   </div>
   <div class="col-md-6">
-    <h5>Total active members: {{ clients?.length }}</h5>
+    <h5>Branch staff members: {{ clients?.length }}</h5>
   </div>
 </div>
-<table *ngIf="clients?.length > 0; else noClients" class="table table-striped">
-  <thead class="thead-inverse">
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let client of clients">
-      <td>{{ client.firstName }} {{ client.lastName }}</td>
-      <td>{{ client.email }}</td>
-      <td><a routerLink="client/{{ client.id }}" class="btn btn-secondary btn-sm"><i class="fa fa-arrow-circle-o-right"></i> Details</a></td>
-    </tr>
-  </tbody>
-</table>
+
+<div *ngIf="clients?.length > 0; else noClients" class="card-columns">
+  <div class="card border-success" *ngFor="let client of clients | search:'firstName,lastName' : searchText">
+    <div class="card-body">
+        <h5 class="card-title text-success">{{ client.firstName }} {{ client.lastName }}</h5>
+        <p class="card-text">{{ client.email }}</p>
+    </div>
+    <div class="card-footer text-right">
+        <a routerLink="client/{{ client.id }}" class="btn btn-outline-success btn-sm"><i class="fa fa-arrow-circle-o-right"></i> Details</a>
+    </div>
+  </div>
+</div>
 
 <ng-template #noClients>
   <hr>

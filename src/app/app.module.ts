@@ -9,6 +9,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { AppComponent } from './app.component';
+import { SearchPipe } from './filter.pipe';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ClientsComponent } from './components/clients/clients.component';
@@ -28,6 +29,7 @@ import { AuthService } from './services/auth.service';
 @NgModule({
   declarations: [
     AppComponent,
+    SearchPipe,
     NavbarComponent,
     DashboardComponent,
     ClientsComponent,

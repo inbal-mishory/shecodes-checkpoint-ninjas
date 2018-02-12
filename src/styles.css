@@ -16,3 +16,19 @@ a.navbar-brand span {
     margin:0;
     padding: 0;
 }
+
+/* input.user-search::before {
+    content: "\f002";
+    font-family: FontAwesome;
+    left:-25px;
+    position:absolute;
+    top:0;
+} */
+
+p.card-text {
+    font-size: .8em;
+}
+
+div.card h3.card-header span.pull-right {
+    font-size: .48em;
+}

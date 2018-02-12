@@ -13,22 +13,15 @@
 </div>
 <hr>
 <div *ngIf="client" class="card">
-  <h3 class="card-header">{{ client.firstName }} {{ client.lastName }}</h3>
+  <h3 class="card-header text-success">{{ client.firstName }} {{ client.lastName }} <span class="pull-right">Member since {{client.joinDate | date}}</span></h3>
   <div class="card-body">
-    <div class="col-md-8 col-sm-6">
-      <h4>Client ID: {{client.id}}</h4>
-    </div>
-    <div class="col-md-8 col-sm-6">
-      
-    </div>
-    <hr>
     <ul class="list-group">
       <li class="list-group-item">
-        Member Email: {{ client.email}}
+        Email: {{ client.email}}
       </li>
       <li class="list-group-item">
-          Member Phone: {{ client.phone}}
-        </li>
+        Phone: {{ client.phone}}
+      </li>
     </ul>
   </div>
 </div>
