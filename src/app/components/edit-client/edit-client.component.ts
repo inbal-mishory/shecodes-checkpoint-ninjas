@@ -16,7 +16,8 @@ export class EditClientComponent implements OnInit {
     firstName: '',
     lastName: '',
     email: '',
-    phone: ''
+    phone: '',
+    joinDate: ''
   };
 
   constructor(

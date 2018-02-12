@@ -14,7 +14,9 @@ export class AddClientComponent implements OnInit {
   client: Client = {
     firstName: '',
     lastName: '',
-    email: ''
+    email: '',
+    phone: '',
+    joinDate: ''
   }
 
   @ViewChild('clientForm') form: any;

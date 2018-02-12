@@ -89,6 +89,21 @@
                     Must be at least 10 characters
                   </div>
               </div>
+              <div class="form-group">
+                  <label for="joinDate">Join date:</label>
+                  <input 
+                  type="text" 
+                  name="joinDate" 
+                  class="form-control"
+                  #clientJoinDate="ngModel"
+                  [ngClass]="{'is-invalid':clientJoinDate.errors && clientJoinDate.touched}"
+                  [(ngModel)]="client.joinDate"
+                  required
+                  >
+                  <div [hidden]="!clientJoinDate.errors?.required" class="invalid-feedback">
+                    Join date required
+                  </div>
+                </div>
               <input type="submit" value="Submit" class="btn btn-primary btn-block">
       </form>
     </div>
