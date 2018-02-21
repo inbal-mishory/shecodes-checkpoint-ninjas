@@ -12,6 +12,8 @@ import { EditClientComponent } from './components/edit-client/edit-client.compon
 import { SettingsComponent } from './components/settings/settings.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
+import { AuthGuard } from './guards/auth.guard';
+
 const routes: Routes = [
   {path: '', component: DashboardComponent},
   {path: 'home', component: HomeComponent},
@@ -29,6 +31,6 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes)
   ],
-  declarations: []
+  providers: [AuthGuard]
 })
 export class AppRoutingModule { }

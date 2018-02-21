@@ -9,6 +9,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { AppComponent } from './app.component';
+import { SearchPipe } from './filter.pipe';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ClientsComponent } from './components/clients/clients.component';
@@ -23,11 +24,13 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { ClientService } from './services/client.service';
 import { HomeComponent } from './components/home/home.component';
+import { AuthService } from './services/auth.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    SearchPipe,
     NavbarComponent,
     DashboardComponent,
     ClientsComponent,
@@ -46,11 +49,11 @@ import { HomeComponent } from './components/home/home.component';
     FormsModule,
     FlashMessagesModule.forRoot(),
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebase,'clientpanel'),
+    AngularFireModule.initializeApp(environment.firebase, 'clientpanel'),
     AngularFirestoreModule,
     AngularFireAuthModule
   ],
-  providers: [ClientService],
+  providers: [ClientService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
