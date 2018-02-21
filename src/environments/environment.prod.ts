@@ -1,11 +1,11 @@
 export const environment = {
   production: true,
   firebase: {
-    apiKey: "AIzaSyAwmhDf6axXcK909yPYw4sDf6Clwhaxgak",
-    authDomain: "clientpanelprod-15d45.firebaseapp.com",
-    databaseURL: "https://clientpanelprod-15d45.firebaseio.com",
-    projectId: "clientpanelprod-15d45",
-    storageBucket: "clientpanelprod-15d45.appspot.com",
-    messagingSenderId: "17274358470"
+    apiKey: 'AIzaSyBRXOgRLJAfHoR06u6dwsjDcUPgCe2crpE',
+    authDomain: 'shecodes-checkpoint-ninjas.firebaseapp.com',
+    databaseURL: 'https://shecodes-checkpoint-ninjas.firebaseio.com',
+    projectId: 'shecodes-checkpoint-ninjas',
+    storageBucket: 'shecodes-checkpoint-ninjas.appspot.com',
+    messagingSenderId: '865919591734'
   }
 };
