@@ -1,7 +1,19 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <h3>Web Ninjas</h3>
+  <h3 class="text-success">Web Ninjas</h3>
+  <div *ngIf="webNinjas?.length > 0; else noNinjas" class="card-columns">
+      <div class="card border-success" *ngFor="let webNinja of webNinjas | search:'firstName,lastName' : searchText">
+        <div class="card-body">
+            <h5 class="card-title text-success">{{ webNinja.firstName }} {{ webNinja.lastName }}</h5>
+            <p class="card-text">{{ webNinja.email }}</p>
+        </div>
+        <div class="card-footer text-right">
+            <a routerLink="webNinjas/{{ webNinja.id }}" class="btn btn-outline-success btn-sm"><i class="fa fa-arrow-circle-o-right"></i> Details</a>
+        </div>
+      </div>
     </div>
-  </div>
 </div>
+
+<ng-template #noNinjas>
+    <hr>
+    <h5>There are no Web ninjas in the system</h5>
+  </ng-template>

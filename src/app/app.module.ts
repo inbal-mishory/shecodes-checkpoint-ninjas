@@ -23,6 +23,7 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { ClientService } from './services/client.service';
+import { WebNinjaService } from './services/web-ninja.service';
 import { HomeComponent } from './components/home/home.component';
 import { AuthService } from './services/auth.service';
 import { WebNinjasComponent } from './components/web-ninjas/web-ninjas.component';
@@ -57,7 +58,7 @@ import { PythonNinjasComponent } from './components/python-ninjas/python-ninjas.
     AngularFirestoreModule,
     AngularFireAuthModule
   ],
-  providers: [ClientService, AuthService],
+  providers: [ClientService, WebNinjaService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
