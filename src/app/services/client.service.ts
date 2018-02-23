@@ -11,9 +11,9 @@ export class ClientService {
   clients: Observable<Client[]>;
   client: Observable<Client>;
 
-  constructor(private afs: AngularFirestore) { 
-    this.clientsCollection = this.afs.collection('clients', 
-    ref => ref.orderBy('lastName','asc'));
+  constructor(private afs: AngularFirestore) {
+    this.clientsCollection = this.afs.collection('clients',
+    ref => ref.orderBy('lastName', 'asc'));
   }
 
   getClients(): Observable<Client[]> {
@@ -24,19 +24,19 @@ export class ClientService {
         const data = action.payload.doc.data() as Client;
         data.id = action.payload.doc.id;
         return data;
-      })
+      });
     });
     return this.clients;
   }
 
-  newClient(client: Client){
+  newClient(client: Client) {
     this.clientsCollection.add(client);
   }
 
-  getClient(id: string): Observable<Client>{
+  getClient(id: string): Observable<Client> {
     this.clientDoc = this.afs.doc<Client>(`clients/${id}`);
     this.client = this.clientDoc.snapshotChanges().map(action => {
-      if(action.payload.exists === false){
+      if (action.payload.exists === false) {
         return null;
       } else {
         const data = action.payload.data() as Client;

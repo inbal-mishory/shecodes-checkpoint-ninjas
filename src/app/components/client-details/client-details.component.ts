@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ClientService } from '../../services/client.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { FlashMessagesService } from 'angular2-flash-messages';
-import { Client } from '../../models/Client'; 
+import { Client } from '../../models/Client';
 
 @Component({
   selector: 'app-client-details',
@@ -27,12 +27,11 @@ export class ClientDetailsComponent implements OnInit {
     // Get client
     this.clientService.getClient(this.id).subscribe(client => {
       this.client = client;
-      //console.log(this.client)
     });
   }
 
-  onDeleteClick(){
-    if(confirm('Are you sure you want to delete this member?')){
+  onDeleteClick() {
+    if (confirm('Are you sure you want to delete this member?')) {
       this.clientService.deleteClient(this.client);
       this.flashMessage.show('Member removed', {
         cssClass: 'alert-success', timeout: 4000

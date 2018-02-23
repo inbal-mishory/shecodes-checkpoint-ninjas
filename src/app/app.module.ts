@@ -25,6 +25,8 @@ import { AppRoutingModule } from './/app-routing.module';
 import { ClientService } from './services/client.service';
 import { HomeComponent } from './components/home/home.component';
 import { AuthService } from './services/auth.service';
+import { WebNinjasComponent } from './components/web-ninjas/web-ninjas.component';
+import { PythonNinjasComponent } from './components/python-ninjas/python-ninjas.component';
 
 
 @NgModule({
@@ -42,7 +44,9 @@ import { AuthService } from './services/auth.service';
     RegisterComponent,
     SettingsComponent,
     NotFoundComponent,
-    HomeComponent
+    HomeComponent,
+    WebNinjasComponent,
+    PythonNinjasComponent
   ],
   imports: [
     BrowserModule,

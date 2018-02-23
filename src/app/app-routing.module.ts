@@ -13,16 +13,23 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
 import { AuthGuard } from './guards/auth.guard';
+import { WebNinjasComponent } from './components/web-ninjas/web-ninjas.component';
+import { PythonNinjasComponent } from './components/python-ninjas/python-ninjas.component';
 
 const routes: Routes = [
-  {path: '', component: DashboardComponent},
+  {path: 'staff', component: DashboardComponent},
+  { path: '',
+    redirectTo: '/home',
+    pathMatch: 'full'
+  },
   {path: 'home', component: HomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'client/add-client', component: AddClientComponent},
   {path: 'client/edit/:id', component: EditClientComponent},
   {path: 'client/:id', component: ClientDetailsComponent},
-  {path: 'settings', component: SettingsComponent},
+  {path: 'webninjas', component: WebNinjasComponent},
+  {path: 'pythonninjas', component: PythonNinjasComponent},
   {path: '**', component: NotFoundComponent}
 ];
 

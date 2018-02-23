@@ -17,13 +17,42 @@ a.navbar-brand span {
     padding: 0;
 }
 
-/* input.user-search::before {
-    content: "\f002";
-    font-family: FontAwesome;
-    left:-25px;
-    position:absolute;
-    top:0;
-} */
+.svgIcon {
+    fill: currentColor;
+}
+
+.homeState {
+    background: url('assets/images/checkpoint-branch2017.jpg') no-repeat;
+    background-size: cover;
+    background-position: center center;
+    min-height: 60vh;
+    color:#fff;
+    text-shadow: 1px 2px 3px #000;
+    filter: blur(1px) saturate(4);
+    position: relative;
+}
+
+.polkaDots {
+    background-color: transparent;
+    background-image: 
+    radial-gradient(rgba(40, 167, 69, .5) 15%, transparent 16%), 
+    radial-gradient(rgba(40, 167, 69, .5) 15%, transparent 16%);
+    background-size: 10px 10px;
+    background-position: 0 0, 5px 5px;
+    position: absolute;
+    height: 60vh;
+}
+
+.homeText {
+    color:#fff;
+}
+
+.homeText p {
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 1px 2px 3px #000;
+    width:60vw;
+}
 
 p.card-text {
     font-size: .8em;
