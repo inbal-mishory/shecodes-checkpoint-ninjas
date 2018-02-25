@@ -17,7 +17,7 @@ export class WebNinjaService {
   }
 
   getNinjas(): Observable<WebNinja[]> {
-    // Get clients with the id
+    // Get ninjas with the id
     this.webNinjas = this.webNinjasCollection.snapshotChanges()
     .map(changes => {
       return changes.map(action => {
@@ -29,10 +29,16 @@ export class WebNinjaService {
     return this.webNinjas;
   }
 
+  newWebNinja(webNinja: WebNinja) {
+    this.webNinjasCollection.add(webNinja);
+  }
+
   getWebNinja(id: string): Observable<WebNinja> {
     this.webNinjaDoc = this.afs.doc<WebNinja>(`webninjas/${id}`);
+    console.log(this.webNinjaDoc);
     this.webNinja = this.webNinjaDoc.snapshotChanges().map(action => {
       if (action.payload.exists === false) {
+        console.log("payload failed")
         return null;
       } else {
         const data = action.payload.data() as WebNinja;
@@ -40,7 +46,7 @@ export class WebNinjaService {
         return data;
       }
     });
-
+    console.log(this.webNinja);
     return this.webNinja;
   }
 }

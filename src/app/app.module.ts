@@ -28,6 +28,8 @@ import { HomeComponent } from './components/home/home.component';
 import { AuthService } from './services/auth.service';
 import { WebNinjasComponent } from './components/web-ninjas/web-ninjas.component';
 import { PythonNinjasComponent } from './components/python-ninjas/python-ninjas.component';
+import { WebNinjaDetailsComponent } from './components/web-ninja-details/web-ninja-details.component';
+import { AddWebNinjaComponent } from './components/add-web-ninja/add-web-ninja.component';
 
 
 @NgModule({
@@ -47,7 +49,9 @@ import { PythonNinjasComponent } from './components/python-ninjas/python-ninjas.
     NotFoundComponent,
     HomeComponent,
     WebNinjasComponent,
-    PythonNinjasComponent
+    PythonNinjasComponent,
+    WebNinjaDetailsComponent,
+    AddWebNinjaComponent
   ],
   imports: [
     BrowserModule,

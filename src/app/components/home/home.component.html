@@ -4,13 +4,14 @@
   </div>
   <div class="align-items-center d-flex flex-column homeText polkaDots col-md-12 justify-content-around">
       <h3>Welcome members and guests!</h3>
-      <p>Choose your track to see your branch sisters info and current project, go to the staff members area to see what they're working on. If you're not registered to the site yet start with registering and create your user.</p>
+      <p>Choose your track to see your branch sisters info and current project, go to the staff members area to see what they're working on.<br/>
+        If you're not registered to the site yet start with registering and create your user.</p>
   </div>
 </div>
 <div class="row">
   <div class="col-md-12 pt-4">
     <div class="d-flex justify-content-around">
-      <a routerLink="/staff" class="item-link mr-md-2">
+      <a *ngIf="isLoggedIn" routerLink="/staff" class="item-link mr-md-2">
       <i class="fa fa-users mr-md-1"></i>Staff members
       </a>
       <a routerLink="/webninjas" class="item-link mr-md-2">

@@ -15,6 +15,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { AuthGuard } from './guards/auth.guard';
 import { WebNinjasComponent } from './components/web-ninjas/web-ninjas.component';
 import { PythonNinjasComponent } from './components/python-ninjas/python-ninjas.component';
+import { WebNinjaDetailsComponent } from './components/web-ninja-details/web-ninja-details.component';
+import { AddWebNinjaComponent } from './components/add-web-ninja/add-web-ninja.component';
 
 const routes: Routes = [
   {path: 'staff', component: DashboardComponent},
@@ -29,6 +31,8 @@ const routes: Routes = [
   {path: 'client/edit/:id', component: EditClientComponent},
   {path: 'client/:id', component: ClientDetailsComponent},
   {path: 'webninjas', component: WebNinjasComponent},
+  {path: 'webninjas/add-web-ninja', component: AddWebNinjaComponent},
+  {path: 'webninja/:id', component: WebNinjaDetailsComponent},
   {path: 'pythonninjas', component: PythonNinjasComponent},
   {path: '**', component: NotFoundComponent}
 ];

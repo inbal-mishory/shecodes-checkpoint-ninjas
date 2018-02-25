@@ -5,7 +5,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarMain">
-      <ul class="navbar-nav mr-auto">
+      <ul *ngIf="isLoggedIn" class="navbar-nav mr-auto">
         <li class="nav-item">
           <a routerLink="/staff" class="btn btn-success">Staff Members</a>
         </li>
@@ -20,9 +20,9 @@
         <li *ngIf="isLoggedIn" class="nav-item">
             <a href="#" class="nav-link">{{ loggedInUser }}</a>
         </li>
-        <li *ngIf="isLoggedIn" class="nav-item">
+        <!-- <li *ngIf="isLoggedIn" class="nav-item">
             <a routerLink="/settings" class="btn btn-success">Settings</a>
-        </li>
+        </li> -->
         <li *ngIf="isLoggedIn" class="nav-item">
             <a href="#" (click)="onLogoutClick()" class="btn btn-success">Logout</a>
         </li>

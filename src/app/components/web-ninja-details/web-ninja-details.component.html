@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-md-6">
+      <a routerLink="/webninjas/" class="btn btn-link">
+        <i class="fa fa-arrow-circle-o-left"></i> Back to Web Ninjas
+      </a>
+    </div>
+    <div class="col-md-6">
+      <div class="btn-group pull-right">
+        <a class="btn btn-dark">Edit</a><!-- routerLink="/client/edit/{{ id }}" -->
+        <button class="btn btn-danger">Delete</button>  <!-- (click)="onDeleteClick()" -->
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="card">
+    <h3 class="card-header text-success">
+      <!-- {{ webNinja.firstName }} {{ webNinja.lastName }} 
+      <span class="pull-right">Member since {{ webNinja.joinDate | date }}</span> -->
+    </h3>
+    <div class="card-body">
+      <ul class="list-group">
+        <li class="list-group-item">
+          <!-- Email: {{ webNinja.email}} -->
+        </li>
+        <li class="list-group-item">
+          <!-- <img src="{{ webNinja.myPic}}" /> -->
+        </li>
+      </ul>
+    </div>
+  </div>
+  

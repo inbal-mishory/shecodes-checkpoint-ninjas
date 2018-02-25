@@ -1,37 +1,35 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FlashMessagesService } from 'angular2-flash-messages';
-import { ClientService } from '../../services/client.service';
+import { WebNinjaService } from '../../services/web-ninja.service';
 import { Router } from '@angular/router';
-
-import { Client } from '../../models/Client';
+import { WebNinja } from '../../models/WebNinja';
 
 @Component({
-  selector: 'app-add-client',
-  templateUrl: './add-client.component.html',
-  styleUrls: ['./add-client.component.css']
+  selector: 'app-add-web-ninja',
+  templateUrl: './add-web-ninja.component.html',
+  styleUrls: ['./add-web-ninja.component.css']
 })
-export class AddClientComponent implements OnInit {
-  client: Client = {
+export class AddWebNinjaComponent implements OnInit {
+  webNinja: WebNinja = {
     firstName: '',
     lastName: '',
     email: '',
-    phone: '',
     joinDate: '',
-    webImage: ''
+    myPic: ''
   }
 
-  @ViewChild('clientForm') form: any;
+  @ViewChild('webNinjaForm') form: any;
 
   constructor(
     private flashMessage: FlashMessagesService,
-    private clientService: ClientService,
+    private webNinjaService: WebNinjaService,
     private router: Router
   ) { }
 
   ngOnInit() {
   }
 
-  onSubmit({value,valid}:{value: Client, valid: boolean}){
+  onSubmit({value,valid}:{value: WebNinja, valid: boolean}){
     if(!valid) {
       // Show error
       this.flashMessage.show('Please fill out the form correctly', {
@@ -39,7 +37,7 @@ export class AddClientComponent implements OnInit {
       })
     } else {
       // Add new client
-      this.clientService.newClient(value);
+      this.webNinjaService.newWebNinja(value);
       // Show message
       this.flashMessage.show('New client added', {
         cssClass: 'alert-success', timeout: 4000
@@ -48,5 +46,4 @@ export class AddClientComponent implements OnInit {
       this.router.navigate(['/'])
     }
   }
-
 }

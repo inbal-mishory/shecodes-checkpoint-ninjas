@@ -1,19 +1,30 @@
-<div class="container">
-  <h3 class="text-success">Web Ninjas</h3>
-  <div *ngIf="webNinjas?.length > 0; else noNinjas" class="card-columns">
-      <div class="card border-success" *ngFor="let webNinja of webNinjas | search:'firstName,lastName' : searchText">
-        <div class="card-body">
-            <h5 class="card-title text-success">{{ webNinja.firstName }} {{ webNinja.lastName }}</h5>
-            <p class="card-text">{{ webNinja.email }}</p>
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="text-success"><i class="fa fa-html5"></i> Web Ninjas</h3>
+            <div class="form-group d-flex">
+                <input [(ngModel)]="searchText" placeholder="search web ninjas" class="form-control w-100 user-search">
+                <a *ngIf="!isLoggedIn" routerLink="/webninjas/add-web-ninja" class="btn btn-success btn-md">
+                    <i class="fa fa-plus"></i> Add Ninja
+                </a>
+            </div>
+            <div *ngIf="webNinjas?.length > 0; else noNinjas" class="card-columns">
+                <div class="card border-success" *ngFor="let webNinja of webNinjas | search:'firstName,lastName' : searchText">
+                    <img class="card-img-top" src="{{webNinja.myPic}}"/>
+                    <div class="card-body">
+                        <h5 class="card-title text-success">{{ webNinja.firstName }} {{ webNinja.lastName }}</h5>
+                        <p class="card-text">{{ webNinja.email }}</p>
+                    </div>
+                    <div class="card-footer text-right">
+                        <!-- <a routerLink="/webninja/{{ webNinja.id }}" class="btn btn-outline-success btn-sm"><i class="fa fa-arrow-circle-o-right"></i> Details</a> -->
+                        Joined: {{webNinja.joinDate | date}}
+                    </div>
+                </div>
+            </div>
+            <ng-template #noNinjas>
+                <hr>
+                <h5>There are no Web ninjas in the system</h5>
+            </ng-template>
         </div>
-        <div class="card-footer text-right">
-            <a routerLink="webNinjas/{{ webNinja.id }}" class="btn btn-outline-success btn-sm"><i class="fa fa-arrow-circle-o-right"></i> Details</a>
-        </div>
-      </div>
     </div>
 </div>
-
-<ng-template #noNinjas>
-    <hr>
-    <h5>There are no Web ninjas in the system</h5>
-  </ng-template>

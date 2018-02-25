@@ -104,6 +104,16 @@
                     Join date required
                   </div>
                 </div>
+                <div class="form-group">
+                  <label for="webImage">Member pic:</label>
+                  <input 
+                  type="text" 
+                  name="webImage" 
+                  class="form-control"
+                  #clientWebImage="ngModel"
+                  [(ngModel)]="client.webImage"
+                  >
+                </div>
               <input type="submit" value="Submit" class="btn btn-primary btn-block">
       </form>
     </div>
